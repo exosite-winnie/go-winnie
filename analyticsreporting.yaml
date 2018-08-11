@@ -1,8 +1,8 @@
 swagger: '2.0'
-schemes:
-  - https
-host: analyticsreporting.googleapis.com
-basePath: /
+
+################################################################################
+#                              API Information                                 #
+################################################################################
 info:
   contact:
     name: Google
@@ -10,6 +10,10 @@ info:
   description: Accesses Analytics report data.
   title: Analytics Reporting
   version: v4
+  schemes:
+    - https
+  host: analyticsreporting.googleapis.com
+  basePath: /
   x-apiClientRegistration:
     url: 'https://console.developers.google.com'
   x-apisguru-categories:
@@ -27,6 +31,7 @@ info:
   x-providerName: googleapis.com
   x-serviceName: analyticsreporting
 externalDocs:
+  description:  TBD
   url: 'https://developers.google.com/analytics/devguides/reporting/core/v4/'
 securityDefinitions:
   Oauth2:

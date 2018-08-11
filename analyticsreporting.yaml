@@ -11,12 +11,16 @@ info:
   title: Analytics Reporting
   version: v4
   x-apiClientRegistration:
+    description: 'TBD'
     url: 'https://console.developers.google.com'
   x-apisguru-categories:
+    description: 'TBD'
     - analytics
   x-logo:
+    description: 'TBD'
     url: 'https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png'
   x-origin:
+    description: 'TBD'
     - converter:
         url: 'https://github.com/lucybot/api-spec-converter'
         version: 2.6.2
@@ -30,6 +34,7 @@ externalDocs:
   description: 'TBD'
   url: 'https://developers.google.com/analytics/devguides/reporting/core/v4/'
 securityDefinitions:
+  description: 'TBD'
   Oauth2:
     authorizationUrl: 'https://accounts.google.com/o/oauth2/auth'
     description: Oauth 2.0 authentication
@@ -39,6 +44,7 @@ securityDefinitions:
       'https://www.googleapis.com/auth/analytics.readonly': View your Google Analytics data
     type: oauth2
 parameters:
+  description: 'TBD'
   $.xgafv:
     description: V1 error format.
     enum:
@@ -119,6 +125,7 @@ tags:
 paths:
   '/v4/reports:batchGet':
     parameters:
+      description: 'TBD'
       - $ref: '#/parameters/$.xgafv'
       - $ref: '#/parameters/access_token'
       - $ref: '#/parameters/alt'
@@ -136,6 +143,7 @@ paths:
       description: Returns the Analytics data.
       operationId: analyticsreporting.reports.batchGet
       parameters:
+        description: 'TBD'
         - in: body
           name: body
           schema:
@@ -146,19 +154,23 @@ paths:
           schema:
             $ref: '#/definitions/GetReportsResponse'
       security:
+        description: 'TBD'
         - Oauth2:
             - 'https://www.googleapis.com/auth/analytics'
         - Oauth2:
             - 'https://www.googleapis.com/auth/analytics.readonly'
       tags:
+        description: 'TBD'
         - reports
 definitions:
+  description: 'TBD'
   Cohort:
     description: |-
       Defines a cohort. A cohort is a group of users who share a common
       characteristic. For example, all users with the same acquisition date
       belong to the same cohort.
     properties:
+      description: 'TBD'
       dateRange:
         $ref: '#/definitions/DateRange'
         description: |-
@@ -205,6 +217,7 @@ definitions:
             }]
           }
     properties:
+      description: 'TBD'
       cohorts:
         description: The definition for the cohort.
         items:
@@ -246,9 +259,11 @@ definitions:
   ColumnHeader:
     description: Column headers.
     properties:
+      description: 'TBD'
       dimensions:
         description: The dimension names in the response.
         items:
+          description: 'TBD'
           type: string
         type: array
       metricHeader:
@@ -261,6 +276,7 @@ definitions:
       The start and end dates are specified in
       [ISO8601](https://en.wikipedia.org/wiki/ISO_8601) date format `YYYY-MM-DD`.
     properties:
+      description: 'TBD'
       endDate:
         description: The end date for the query in the format `YYYY-MM-DD`.
         type: string
@@ -273,6 +289,7 @@ definitions:
       Used to return a list of metrics for a single DateRange / dimension
       combination
     properties:
+      description: 'TBD'
       pivotValueRegions:
         description: The values of each pivot region.
         items:
@@ -291,6 +308,7 @@ definitions:
       indicates the city, for example, "Paris" or "New York", from which
       a session originates.
     properties:
+      description: 'TBD'
       histogramBuckets:
         description: |-
           If non-empty, we place dimension values into buckets after string to
@@ -325,6 +343,7 @@ definitions:
           The client has to explicitly request `"orderType": "HISTOGRAM_BUCKET"`
           for a histogram-mutated dimension.
         items:
+          description: 'TBD'
           format: int64
           type: string
         type: array
@@ -335,6 +354,7 @@ definitions:
   DimensionFilter:
     description: Dimension filter specifies the filtering options on a dimension.
     properties:
+      description: 'TBD'
       caseSensitive:
         description: Should the match be case sensitive? Default is false.
         type: boolean
@@ -348,6 +368,7 @@ definitions:
           If `IN_LIST` operator, then the entire list is used to filter the
           dimensions as explained in the description of the `IN_LIST` operator.
         items:
+          description: 'TBD'
           type: string
         type: array
       not:
@@ -358,6 +379,7 @@ definitions:
       operator:
         description: How to match the dimension to the expression. The default is REGEXP.
         enum:
+          description: 'TBD'
           - OPERATOR_UNSPECIFIED
           - REGEXP
           - BEGINS_WITH
@@ -380,6 +402,7 @@ definitions:
           The repeated set of filters. They are logically combined based on the
           operator specified.
         items:
+          description: 'TBD'
           $ref: '#/definitions/DimensionFilter'
         type: array
       operator:
@@ -387,6 +410,7 @@ definitions:
           The operator for combining multiple dimension filters. If unspecified, it
           is treated as an `OR`.
         enum:
+          description: 'TBD'
           - OPERATOR_UNSPECIFIED
           - OR
           - AND
@@ -397,6 +421,7 @@ definitions:
       Dynamic segment definition for defining the segment within the request.
       A segment can select users, sessions or both.
     properties:
+      description: 'TBD'
       name:
         description: The name of the dynamic segment.
         type: string
@@ -410,12 +435,14 @@ definitions:
   GetReportsRequest:
     description: The batch request containing multiple report request.
     properties:
+      description: 'TBD'
       reportRequests:
         description: |-
           Requests, each request will have a separate response.
           There can be a maximum of 5 requests. All requests should have the same
           `dateRanges`, `viewId`, `segments`, `samplingLevel`, and `cohortGroup`.
         items:
+          description: 'TBD'
           $ref: '#/definitions/ReportRequest'
         type: array
       useResourceQuotas:

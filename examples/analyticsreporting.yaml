@@ -156,10 +156,13 @@ paths:
       security:
         - Oauth2:
             - 'https://www.googleapis.com/auth/analytics'
+          description: 'TBD'
         - Oauth2:
             - 'https://www.googleapis.com/auth/analytics.readonly'
+          description: 'TBD'
       tags:
         - reports
+          description: 'TBD'
 definitions:
   Cohort:
     description: |-

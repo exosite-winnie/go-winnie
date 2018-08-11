@@ -154,13 +154,11 @@ paths:
           schema:
             $ref: '#/definitions/GetReportsResponse'
       security:
-          description: 'TBD'
         - Oauth2:
             - 'https://www.googleapis.com/auth/analytics'
         - Oauth2:
             - 'https://www.googleapis.com/auth/analytics.readonly'
       tags:
-          description: 'TBD'
         - reports
 definitions:
   Cohort:

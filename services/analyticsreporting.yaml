@@ -374,7 +374,6 @@ definitions:
       operator:
         description: How to match the dimension to the expression. The default is REGEXP.
         enum:
-          description: 'TBD'
           - OPERATOR_UNSPECIFIED
           - REGEXP
           - BEGINS_WITH
@@ -405,7 +404,6 @@ definitions:
           The operator for combining multiple dimension filters. If unspecified, it
           is treated as an `OR`.
         enum:
-          description: 'TBD'
           - OPERATOR_UNSPECIFIED
           - OR
           - AND

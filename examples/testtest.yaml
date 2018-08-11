@@ -151,7 +151,7 @@ paths:
       tags:
         - reports
       description: Returns the Analytics data.
-      operationId: analyticsreporting.reports.batchGet
+      operationId: analyticsreportingreportsbatchGet
       parameters:
         - in: body
           name: body

@@ -10,9 +10,9 @@ info:
   description: Accesses Analytics report data.
   title: Analytics Reporting
   version: v4
+  host: analyticsreporting.googleapis.com
   schemes:
     - https
-  host: analyticsreporting.googleapis.com
   basePath: /
   x-apiClientRegistration:
     url: 'https://console.developers.google.com'

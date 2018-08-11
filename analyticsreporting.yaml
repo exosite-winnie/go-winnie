@@ -3,17 +3,17 @@ swagger: '2.0'
 ################################################################################
 #                              API Information                                 #
 ################################################################################
+version: v4
+schemes:
+    - https
+host: analyticsreporting.googleapis.com
+basePath: /
 info:
   contact:
     name: Google
     url: 'https://google.com'
   description: Accesses Analytics report data.
   title: Analytics Reporting
-  version: v4
-  host: analyticsreporting.googleapis.com
-  schemes:
-    - https
-  basePath: /
   x-apiClientRegistration:
     url: 'https://console.developers.google.com'
   x-apisguru-categories:

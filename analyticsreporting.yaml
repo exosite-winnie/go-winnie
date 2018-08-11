@@ -27,6 +27,7 @@ info:
   x-providerName: googleapis.com
   x-serviceName: analyticsreporting
 externalDocs:
+  description: 'TBD'
   url: 'https://developers.google.com/analytics/devguides/reporting/core/v4/'
 securityDefinitions:
   Oauth2:

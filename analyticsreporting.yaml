@@ -14,19 +14,19 @@ info:
     description: 'TBD'
     url: 'https://console.developers.google.com'
   x-apisguru-categories:
-    description: 'TBD'
     - analytics
+      description: 'TBD'
   x-logo:
     description: 'TBD'
     url: 'https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png'
   x-origin:
-    description: 'TBD'
     - converter:
         url: 'https://github.com/lucybot/api-spec-converter'
         version: 2.6.2
       format: google
       url: 'https://analyticsreporting.googleapis.com/$discovery/rest?version=v4'
       version: v1
+      description: 'TBD'
   x-preferred: true
   x-providerName: googleapis.com
   x-serviceName: analyticsreporting
@@ -122,10 +122,10 @@ parameters:
     type: string
 tags:
   - name: reports
+    description: 'TBD'
 paths:
-  '/v4/reports:batchGet':
+  /v4/reports:batchGet:
     parameters:
-      description: 'TBD'
       - $ref: '#/parameters/$.xgafv'
       - $ref: '#/parameters/access_token'
       - $ref: '#/parameters/alt'
@@ -160,10 +160,8 @@ paths:
         - Oauth2:
             - 'https://www.googleapis.com/auth/analytics.readonly'
       tags:
-        description: 'TBD'
         - reports
 definitions:
-  description: 'TBD'
   Cohort:
     description: |-
       Defines a cohort. A cohort is a group of users who share a common

@@ -294,6 +294,7 @@ definitions:
       pivotValueRegions:
         description: The values of each pivot region.
         items:
+          description: 'TBD'
           $ref: '#/definitions/PivotValueRegion'
         type: array
       values:
@@ -470,6 +471,7 @@ definitions:
       reports:
         description: Responses corresponding to each of the request.
         items:
+          description: 'TBD'
           $ref: '#/definitions/Report'
         type: array
       resourceQuotasRemaining:
@@ -555,6 +557,7 @@ definitions:
           The repeated set of filters. They are logically combined based on the
           operator specified.
         items:
+          description: 'TBD'
           $ref: '#/definitions/MetricFilter'
         type: array
       operator:
@@ -573,6 +576,7 @@ definitions:
       metricHeaderEntries:
         description: Headers for the metrics in the response.
         items:
+          description: 'TBD'
           $ref: '#/definitions/MetricHeaderEntry'
         type: array
       pivotHeaders:
@@ -983,6 +987,7 @@ definitions:
       dimensions:
         description: List of requested dimensions.
         items:
+          description: 'TBD'
           type: string
         type: array
       metrics:
@@ -1043,6 +1048,7 @@ definitions:
       expressions:
         description: 'The list of expressions, only the first element is used for all operators'
         items:
+          description: 'TBD'
           type: string
         type: array
       maxComparisonValue:

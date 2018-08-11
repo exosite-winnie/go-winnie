@@ -142,7 +142,6 @@ paths:
       description: Returns the Analytics data.
       operationId: analyticsreporting.reports.batchGet
       parameters:
-        description: 'TBD'
         - in: body
           name: body
           schema:

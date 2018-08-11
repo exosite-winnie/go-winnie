@@ -5,6 +5,7 @@ host: analyticsreporting.googleapis.com
 basePath: /
 info:
   contact:
+    description: 'TBD'
     name: Google
     url: 'https://google.com'
   description: Accesses Analytics report data.
@@ -144,6 +145,7 @@ paths:
       parameters:
         - in: body
           name: body
+          description: 'TBD'
           schema:
             $ref: '#/definitions/GetReportsRequest'
       responses:
@@ -152,11 +154,13 @@ paths:
           schema:
             $ref: '#/definitions/GetReportsResponse'
       security:
+          description: 'TBD'
         - Oauth2:
             - 'https://www.googleapis.com/auth/analytics'
         - Oauth2:
             - 'https://www.googleapis.com/auth/analytics.readonly'
       tags:
+          description: 'TBD'
         - reports
 definitions:
   Cohort:

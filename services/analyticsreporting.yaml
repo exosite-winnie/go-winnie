@@ -15,7 +15,6 @@ info:
     url: 'https://console.developers.google.com'
   x-apisguru-categories:
     - analytics
-    description: 'TBD'
   x-logo:
     description: 'TBD'
     url: 'https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png'

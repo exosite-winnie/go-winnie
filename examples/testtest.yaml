@@ -5,14 +5,14 @@ swagger:  "2.0"
 ################################################################################
 info:
   version:      "v4"
-  title:        "Analytics Reporting"
-  description:  "Accesses Analytics report data."
+  title:        "Firebase Cloud Messaging HTTP Protocol"
+  description:  "Firebase Cloud Messaging HTTP Protocol"
   contact:
     name:       Google
     email:      google@exosite.com
   x-apiClientRegistration:
     description: 'TBD'
-    url: 'https://console.developers.google.com'
+    url: 'https://fcm.googleapis.com'
   x-apisguru-categories:
     - analytics
       description: 'TBD'

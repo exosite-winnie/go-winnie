@@ -39,7 +39,6 @@ x-exosite-config-parameters:
     description:  Authentication Key
     type:         string
     required:     true
-    pattern:      ^[0-9a-zA-Z]{34}$
 
 ################################################################################
 #                                           Paths                              #

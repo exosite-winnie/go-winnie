@@ -10,4 +10,4 @@ return {id=request.parameters.userId}  -- json by default
 -- oef
 
 --#ENDPOINT GET /update/version
-print ('update 6')
+print ('update 7')

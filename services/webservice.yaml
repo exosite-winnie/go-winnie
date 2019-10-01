@@ -4,6 +4,4 @@
 # Can be modified by user, as whitelisted in the options.safeConfigs in the murano.yaml file.
 
 documented_endpoints:
-  - private
-
-rate_limit: 1
+  - public

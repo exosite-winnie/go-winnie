@@ -8,3 +8,6 @@ return "new-user-id"
 print("Fetch a given user" .. request.parameters.userId)
 return {id=request.parameters.userId}  -- json by default
 -- oef
+
+--#ENDPOINT GET /update/version
+print ('update 1')

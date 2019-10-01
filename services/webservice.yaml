@@ -7,3 +7,6 @@ documented_endpoints:
   - public
 
 rate_limit: 1
+
+security:
+  - basic

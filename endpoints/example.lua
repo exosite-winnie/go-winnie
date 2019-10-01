@@ -1,10 +1,9 @@
--- File containing Webservice http endpoints
---#ENDPOINT POST /api/user text/plain
--- A lua handler for this endpoint, doc: http://docs.exosite.com/reference/services/webservice/#request
-return "new-user-id"
-
---#ENDPOINT GET /api/user/{userId}
---#TAGS user public
-print("Fetch a given user" .. request.parameters.userId)
-return {id=request.parameters.userId}  -- json by default
--- oef
+--#ENDPOINT POST /call/{service}/{operation}
+--#TAGS public
+-- if request.headers["authorization"] == "1234567890" then
+local fn = _G[request.parameters.service][request.parameters.operation]
+response.message = fn(request.body)
+-- else
+--   response.code = 401
+--   response.message = "invalid authorization"
+-- end

@@ -5,4 +5,4 @@
 documented_endpoints:
   - public
 rate_limit:
-  - 0
+  - 1

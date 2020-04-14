@@ -35,12 +35,14 @@ options:
     # - twilio # We don't need to whitelist twilio as we havn't defined any parameter in ./service/twilio.yaml
 
 env_schema:
-  description: my custom description
+  description: This text will display on the Solution settings page.
   loglevel:
     type: string
     description: a loglevel
     default: warn
     enum: [debug, info, warn, error]
+  another_env:
+    default: env
 
 assets:
   location: assets

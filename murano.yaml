@@ -39,7 +39,7 @@ env_schema:
   loglevel:
     type: string
     description: a loglevel
-    value: 'winnie'
+    default: 'winnie'
 
 assets:
   location: assets

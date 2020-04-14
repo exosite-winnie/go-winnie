@@ -39,7 +39,8 @@ env_schema:
   loglevel:
     type: string
     description: a loglevel
-    default: 'winnie'
+    default: warn
+    enum: [debug, info, warn, error]
 
 assets:
   location: assets

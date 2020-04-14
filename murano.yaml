@@ -41,6 +41,8 @@ env_schema:
     description: a loglevel
     default: warn
   another_env:
+    type: string
+    description: a loglevel
     default: env
 
 assets:

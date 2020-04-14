@@ -34,6 +34,13 @@ options:
     # The ./services/webservice.yaml defines a default 'documented_endpoints' however as not specified here, changes will be overloaded
     # - twilio # We don't need to whitelist twilio as we havn't defined any parameter in ./service/twilio.yaml
 
+env_schema:
+  description: my custom description
+  loglevel:
+    type: string
+    description: a loglevel
+    value: 'winnie'
+
 assets:
   location: assets
   include: '**/*'

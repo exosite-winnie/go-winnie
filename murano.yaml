@@ -44,6 +44,10 @@ env_schema:
     type: string
     description: a loglevel
     default: warn
+  loglevel2:
+    type: string
+    description: a loglevel
+    default: info
 
 assets:
   location: assets

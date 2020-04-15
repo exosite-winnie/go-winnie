@@ -44,7 +44,7 @@ env_schema:
     type: string
     description: a loglevel
     default: warn
-    enum: [debug, info]
+    enum: [debug]
   another_env:
     default: env
 

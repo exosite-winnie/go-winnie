@@ -33,7 +33,11 @@ options:
     - config.auto_update
     # The ./services/webservice.yaml defines a default 'documented_endpoints' however as not specified here, changes will be overloaded
     # - twilio # We don't need to whitelist twilio as we havn't defined any parameter in ./service/twilio.yaml
-
+    
+  # Following options allows to customize de release abort behavior.
+  # abort_threshold: 1 # If first deployed solution fails, cancel the release. Default=4
+  # abort_ratio: 0.1 # If failures reach 10% of successes, cancel the release. Default=0.5
+   
 env_schema:
   description: This text will display on the Solution settings page.
   loglevel:
@@ -50,7 +54,7 @@ assets:
   exclude: ['**/.*']
   default_page: index.html
 
-endpoints:
+endpoints: # the schema.yaml file will be loaded automatically, no special configuration needed.
   location: endpoints
   include: '**/*.lua'
   exclude: ['*_test.lua', '*_spec.lua']

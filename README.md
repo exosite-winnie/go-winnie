@@ -1,4 +1,4 @@
-# Winnie regular testing repo
+# Getting Started Solution Template
 
 This page describes the project structure used to set and update a Murano Solution. Murano templates can be used in two distinct ways:
 - To synchronize an existing Murano solution with a local project folder using the [Murano-CLI](http://docs.exosite.com/development/tools/murano-cli/).
@@ -34,6 +34,7 @@ Following sections are optional and their order is not enforced. If not specifie
 Section name | Format | Example                                            | Description
 -------------|--------|----------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 options      | object | [See in the options section](#options-section)     | Template general settings.
+env_schema   | object | [See in the options section](#env-schema-section)  | Environment schema settings.
 assets       | object | [See in the assets section](#assets-section)       | Target source files of the front-end Web application.
 endpoints    | object | [See in the endpoints section](#endpoints-section) | Target source files of the webservice back-end endpoints.
 modules      | object | [See in the modules section](#modules-section)     | Target reusable module source files.
@@ -71,13 +72,15 @@ _Note:_ Deployment strategy options currently only apply to Webservice/Websocket
 
 ```yaml
 options:
-  merge: true,
-  safeNamespace: vendor,
+  merge: true
+  safeNamespace: vendor
   safeConfigs:
     - device2
     - interface.name
     - config.auto_update
     - webservice.documented_endpoints
+  abort_threshold: 4
+  abort_ratio: 0.5
 ```
 
 Fieldname     | Format                | Default value        | Description
@@ -85,6 +88,25 @@ Fieldname     | Format                | Default value        | Description
 merge         | boolean               | false                | Indicates if existing items need to be removed (default) or kept, overlapping will be updated
 safeNamespace | string                |                      | Indicates a namespace prefix where existing items remains un-touched (no update or deletion)
 safeConfigs   | string[]              |                      | Indicates which service configuration settings, defined in the .yaml files from the /services folder, would not overload existing value during updates and allow user to customize it. This is needed for any 'default' configuration value meant to be changed by user.
+abort_threshold | positive integer    | 4                    | Number of starting failed solution deployments before aborting a release. (If the first 4 solutions fail to deploy: abort)
+abort_ratio   | positive number       | 0.5                  | Ratio of failed solution deployments to cancel the release, starting from abort_threshold * 2. (With 10 solutions successfully deployed, if 6 solutions failed: abort.)
+
+
+#### Env Schema section
+
+You can define `env_schema` as a JSONSchema for the template environment variables accessed through `os.getenv("loglevel")`. Defined settings will then be available and validated on Murano solution settings page.
+
+_Note:_ Only string type is supported.
+
+```yaml
+env_schema:
+  description: my custom description
+  loglevel:
+    type: string
+    description: a loglevel
+    default: warn
+    enum: [debug, info, warn, error]
+```
 
 #### Assets section
 
@@ -139,7 +161,20 @@ Selected files need to contains valid Lua script. Endpoints are defined using a 
 
 The `content_type` is optional and `application/json` is the default value.
 
+In addition to `--#ENDPOINT`, we enable you to define the following optional attributes:
+- `--#TAGS`, followed by a list of tags which are separated by space. eg: `--#TAGS public user`.
+- `--#SECURITY`, defines the authentication token needed for this endpoint, it could be `none`, `basic`, `bearer` or `apiKey`.
+- `--#RATELIMIT`, defines the requests per minute for this endpoint. eg: `--#RATELIMIT 1`.
+- `--#SUMMARY`, describes this endpoint. eg: `--#SUMMARY To get user name`.
+- `--#DESCRIPTION`, describes this endpoint in details. eg: `--#DESCRIPTION This api is used for users to get info`.
+
 **Example: [./endpoints/example.lua](./endpoints/example.lua)**
+
+You can set global security and rate_limit in [services/webservice.yaml](./services/webservice.yaml) file by add the following properties:
+- `security_schemes`, defines all the security schemes for this solution, we support `basic`, `bearer` and `apiKey`.
+- `security`, defines the authentication token needed for this solution, it could be `basic`, `bearer` or `apiKey`.
+- `rate_limit`, defines the rate limit for this solution, the unit is request per minute per token or per IP if token is not required.
+
 
 ```lua
 --#ENDPOINT POST /api/user

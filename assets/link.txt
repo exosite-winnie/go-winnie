@@ -1,1 +1,1 @@
-Some static file content
+./static/note.txt
